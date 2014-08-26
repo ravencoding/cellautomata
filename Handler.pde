@@ -1,16 +1,24 @@
 public class Handler{
   World world;
+  int imgcounter;
+  boolean isPressed = false;
   
   public Handler(){
     this.world = new World();
+    this. imgcounter = 0;
   }
   
   void saveImg(){
-    if(keyPressed){
+    if(keyPressed && !isPressed){
       if(key == 's'){
-        println("debug");
-        save("automata.png");
+        println("debug: save" + nf(imgcounter, 3) );
+        String filename = "automata" + nf(imgcounter, 3) + ".png";
+        //save(filename);
+        imgcounter++;
+        isPressed = true;
       }
+    }else if(!keyPressed){
+      isPressed = false;
     }
   }
   
