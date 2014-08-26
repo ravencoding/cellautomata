@@ -11,9 +11,8 @@ public class Handler{
   void saveImg(){
     if(keyPressed && !isPressed){
       if(key == 's'){
-        println("debug: save" + nf(imgcounter, 3) );
         String filename = "automata" + nf(imgcounter, 3) + ".png";
-        //save(filename);
+        save(filename);
         imgcounter++;
         isPressed = true;
       }
